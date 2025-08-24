@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Dera Forum</title>
+<style>
+  body { font-family: Arial; background: #f9f9f9; }
+  #chat { max-width: 600px; margin: 20px auto; padding: 10px; background: #fff; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+  .message { margin: 5px 0; padding: 5px; border-bottom: 1px solid #eee; }
+  .username { font-weight: bold; }
+  input, select, button { padding: 8px; margin: 5px; border-radius: 5px; border: 1px solid #ccc; }
+  button { background: #2ecc71; color: white; cursor: pointer; border: none; }
+  button:hover { background: #27ae60; }
+</style>
+</head>
+<body>
+
+<h2 style="text-align:center;">🌍 Dera Forum</h2>
+
+<div style="text-align:center;">
+  <input id="username" placeholder="Your Name">
+  <input id="phone" placeholder="Your Phone Number">
+  <br>
+  <select id="chatType">
+    <option value="group">Group Chat</option>
+    <option value="direct">Direct Message</option>
+  </select>
+
+  <div id="groupOptions">
+    <select id="groupName">
+      <option value="general">General</option>
+      <option value="education">Education</option>
+      <option value="business">Business</option>
+      <option value="culture">Culture</option>
+    </select>
+  </div>
+
+  <div id="directOptions" style="display:none;">
+    <input id="friendPhone" placeholder="Friend's Phone Number">
+  </div>
+</div>
+
+<div id="chat"></div>
+
+<div style="text-align:center;">
+  <input id="message" placeholder="Type message" size="40">
+  <button onclick="sendMessage()">Send</button>
+</div>
+
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+<script>
+  // 🔹 Replace with your Firebase config
+  const firebaseConfig = {
+    apiKey: "YOUR_API_KEY",
+    authDomain: "YOUR_APP.firebaseapp.com",
+    databaseURL: "https://YOUR_APP.firebaseio.com",
+    projectId: "YOUR_APP",
+    storageBucket: "YOUR_APP.appspot.com",
+    messagingSenderId: "YOUR_SENDER_ID",
+    appId: "YOUR_APP_ID"
+  };
+  firebase.ini
